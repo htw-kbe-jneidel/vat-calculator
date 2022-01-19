@@ -25,6 +25,6 @@ export class VatCalculator {
       throw new Error( "invalid product category" );
 
     const percentage = this.transformCategoryIntoPercentage( productCategory );
-    return parseFloat((price * percentage).toFixed(2));
+    return parseFloat( ( price * percentage ).toFixed( 2 ) );
   }
 }

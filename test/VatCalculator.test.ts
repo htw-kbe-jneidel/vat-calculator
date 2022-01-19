@@ -8,7 +8,7 @@ describe( "calc", () => {
     const category = "küchenzubehör";
     const expected = 35.53;
 
-    const res = vc.calc(price, category);
+    const res = vc.calc( price, category );
     expect( res ).toBe( expected );
   } );
 
@@ -17,7 +17,7 @@ describe( "calc", () => {
     const category = "zeitung";
     const expected = 13.09;
 
-    const res = vc.calc(price, category);
+    const res = vc.calc( price, category );
     expect( res ).toBe( expected );
   } );
 
@@ -26,6 +26,6 @@ describe( "calc", () => {
     const category = "NOT_A_CATEGORY";
     const expected = new Error( "invalid product category" );
 
-    expect(() => vc.calc(price, category) ).toThrow( expected );
+    expect( () => vc.calc( price, category ) ).toThrow( expected );
   } );
 } );

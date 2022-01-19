@@ -14,13 +14,13 @@ export function validateCaculateVatQueue( data: inputData|undefined ): outputRes
       errorMsg: "invalid data object",
     };
   }
-  if ( !data.price || isNaN(data.price) ) {
+  if ( !data.price || isNaN( data.price ) ) {
     return {
       error   : true,
       errorMsg: "missing price",
     };
   }
-  if ( !data.category || typeof data.category !== 'string' ) {
+  if ( !data.category || typeof data.category !== "string" ) {
     return {
       error   : true,
       errorMsg: "missing category",

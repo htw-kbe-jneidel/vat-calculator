@@ -8,5 +8,5 @@ import * as rabbitMq from "./rabbit-mq";
   const o = { price: 187, category: "küchenzubehör" };
   const r = await queue.send( "vat-calculator", o );
   console.log( r );
-  process.exit(0)
+  process.exit( 0 );
 } )();

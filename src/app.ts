@@ -9,10 +9,10 @@ const vatCalculator = new VatCalculator();
 const replyFunction = data => {
   const response = validateCaculateVatQueue( data );
   if ( response != null )
-    return response
+    return response;
 
   return {
-    vat: vatCalculator.calc( data.price, data.category ),
+    vat  : vatCalculator.calc( data.price, data.category ),
     error: false,
   };
 };
