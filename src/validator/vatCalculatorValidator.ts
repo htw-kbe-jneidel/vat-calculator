@@ -1,13 +1,6 @@
-interface inputData {
-  price?: number;
-  category?: string;
-}
-interface outputResponse {
-  error: boolean;
-  errorMsg: string;
-}
+import { VatCalculatorInputDataType, VatCalculatorOutputDataType } from "../type";
 
-export function validateCaculateVatQueue( data: inputData|undefined ): outputResponse|null {
+export function vatCalculatorValidator( data: VatCalculatorInputDataType ): VatCalculatorOutputDataType|null {
   if ( !data ) {
     return {
       error   : true,

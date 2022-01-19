@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import amqp from "amqplib";
 import EventEmitter from "events";
 
 import { Connection } from ".";
@@ -8,7 +7,7 @@ import { Connection } from ".";
 export class Queue {
   connection: Connection;
   private _channel: any = undefined;
-  private _replyFunction: Function|undefined = undefined;
+  private _controller: Function|undefined = undefined;
 
   constructor( conn: Connection ) {
     this.connection = conn;
@@ -24,14 +23,14 @@ export class Queue {
     return this._channel;
   }
 
-  setReplyFunction( func: Function ) {
-    this._replyFunction = func;
+  setController( func: Function ) {
+    this._controller = func;
   }
-  get replyFunction() {
-    if ( this._replyFunction === undefined )
+  get controller() {
+    if ( this._controller === undefined )
       throw new Error( "Queue.setReplyFunction has not been called" );
 
-    return this._replyFunction;
+    return this._controller;
   }
 
   private sendReply( msg: any, result: String ) {
@@ -55,7 +54,7 @@ export class Queue {
     console.log( `Listening to rabbitmq Queue: ${queueName}` );
     channel.consume( queueName, ( msg: any ) => {
       const json = JSON.parse( msg.content.toString( "utf8" ) ); // missing error handling
-      const reply = this.replyFunction( json );
+      const reply = this.controller( json );
       this.sendReply( msg, JSON.stringify( reply ) );
     } );
   }

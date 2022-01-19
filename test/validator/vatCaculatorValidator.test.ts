@@ -1,4 +1,4 @@
-import { validateCaculateVatQueue } from "../../src/validators";
+import { vatCaculatorValidator } from "../../src/validator";
 
 test( "success", () => {
   const data =  {
@@ -7,7 +7,7 @@ test( "success", () => {
   };
   const expected = null;
 
-  const res = validateCaculateVatQueue( data );
+  const res = vatCaculatorValidator( data );
   expect( res ).toBe( expected );
 } );
 
@@ -18,7 +18,7 @@ test.each( [ undefined ] )
     errorMsg: "invalid data object",
   };
 
-  const res = validateCaculateVatQueue( data );
+  const res = vatCaculatorValidator( data );
   expect( res ).toEqual( expected );
 } );
 
@@ -31,7 +31,7 @@ test( "missing price", () => {
     errorMsg: "missing price",
   };
 
-  const res = validateCaculateVatQueue( data );
+  const res = vatCaculatorValidator( data );
   expect( res ).toEqual( expected );
 } );
 test.each( [ NaN, 0 ] )
@@ -45,7 +45,7 @@ test.each( [ NaN, 0 ] )
     errorMsg: "missing price",
   };
 
-  const res = validateCaculateVatQueue( data );
+  const res = vatCaculatorValidator( data );
   expect( res ).toEqual( expected );
 } );
 
@@ -58,6 +58,6 @@ test( "missing category", () => {
     errorMsg: "missing category",
   };
 
-  const res = validateCaculateVatQueue( data );
+  const res = vatCaculatorValidator( data );
   expect( res ).toEqual( expected );
 } );
