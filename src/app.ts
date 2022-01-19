@@ -1,4 +1,4 @@
-import * as rabbitMq from "./rabbit-mq";
+import * as rabbitMq from "./entity/rabbit-mq";
 import * as controller from "./controller";
 
 const RABBIT_MQ_IP =  "127.0.0.1" ;

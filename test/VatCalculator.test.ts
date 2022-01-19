@@ -1,4 +1,4 @@
-import { VatCalculator } from "../src/VatCalculator";
+import { VatCalculator } from "../src/entity/VatCalculator";
 
 const vc = new VatCalculator();
 

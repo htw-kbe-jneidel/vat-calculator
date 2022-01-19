@@ -1,4 +1,4 @@
-import * as rabbitMq from "./rabbit-mq";
+import * as rabbitMq from "./entity/rabbit-mq";
 
 ( async () => {
   const rabbitMqConnection = new rabbitMq.Connection( "127.0.0.1" );
