@@ -21,7 +21,7 @@
     "strictPropertyInitialization": true,
     "noImplicitThis": false,
     "alwaysStrict": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noImplicitReturns": true,
     "paths": {
