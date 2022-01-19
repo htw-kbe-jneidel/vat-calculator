@@ -4,6 +4,8 @@
 
 **vat-calculator**
 
+Calculate the VAT for the given price and product category.
+
 Input:
 ```
 {
