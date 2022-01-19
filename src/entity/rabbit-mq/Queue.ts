@@ -84,6 +84,6 @@ export class Queue {
       }
     );
 
-    return await new Promise( resolve => eventEmitter.once( "consumeDone", resolve ) );
+    return new Promise( resolve => eventEmitter.once( "consumeDone", resolve ) );
   }
 }

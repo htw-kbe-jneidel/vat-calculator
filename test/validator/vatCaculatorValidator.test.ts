@@ -11,8 +11,9 @@ test( "success", () => {
   expect( res ).toBe( expected );
 } );
 
-test.each( [ undefined ] )
-( "invalid data: %s", data => {
+test.each( [
+  undefined,
+] )( "invalid data: %s", data => {
   const expected = {
     error   : true,
     errorMsg: "invalid data object",
@@ -34,8 +35,9 @@ test( "missing price", () => {
   const res = vatCaculatorValidator( data );
   expect( res ).toEqual( expected );
 } );
-test.each( [ NaN, 0 ] )
-( "missing price: %s", price => {
+test.each(
+  [ NaN, 0 ]
+)( "missing price: %s", price => {
   const data = {
     price,
     category: "zeitung",
