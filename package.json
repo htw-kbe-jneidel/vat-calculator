@@ -16,7 +16,7 @@
     "build": "npm run build-ts",
     "build-ts": "tsc",
     "build-webpack": "webpack",
-    "watch": "concurrently -k -n \"🔨,🚀\" \"npm run watch-ts\" \"npm run watch-test\" --prefix name",
+    "watch": "concurrently -k -n \"🔨,🚀\" \"npm run watch-build\" \"npm run watch-test\" --prefix name",
     "watch-build": "tsc -w",
     "watch-test": "jest --watch",
     "start-prod": "node -r dotenv/config dist/app.js dotenv_config_path=.env",
@@ -42,7 +42,7 @@
   "jest": {
     "testEnvironment": "node",
     "testMatch": [
-      "**/?*.test.ts"
+      "**/**/*.test.ts"
     ],
     "transform": {
       "^.+\\.ts$": "ts-jest"
