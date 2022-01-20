@@ -1,4 +1,4 @@
-import { vatCaculatorValidator } from "../../src/validator";
+import { vatCalculatorValidator } from "../../src/validator";
 
 test( "success", () => {
   const data =  {
@@ -7,7 +7,7 @@ test( "success", () => {
   };
   const expected = null;
 
-  const res = vatCaculatorValidator( data );
+  const res = vatCalculatorValidator( data );
   expect( res ).toBe( expected );
 } );
 
@@ -19,7 +19,7 @@ test.each( [
     errorMsg: "invalid data object",
   };
 
-  const res = vatCaculatorValidator( data );
+  const res = vatCalculatorValidator( data );
   expect( res ).toEqual( expected );
 } );
 
@@ -32,7 +32,7 @@ test( "missing price", () => {
     errorMsg: "missing price",
   };
 
-  const res = vatCaculatorValidator( data );
+  const res = vatCalculatorValidator( data );
   expect( res ).toEqual( expected );
 } );
 test.each(
@@ -47,7 +47,7 @@ test.each(
     errorMsg: "missing price",
   };
 
-  const res = vatCaculatorValidator( data );
+  const res = vatCalculatorValidator( data );
   expect( res ).toEqual( expected );
 } );
 
@@ -60,6 +60,6 @@ test( "missing category", () => {
     errorMsg: "missing category",
   };
 
-  const res = vatCaculatorValidator( data );
+  const res = vatCalculatorValidator( data );
   expect( res ).toEqual( expected );
 } );

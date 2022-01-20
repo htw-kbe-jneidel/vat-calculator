@@ -28,4 +28,15 @@ describe( "calc", () => {
 
     expect( () => vc.calc( price, category ) ).toThrow( expected );
   } );
+
+  test.each( [
+    NaN, undefined, "le string",
+  ] )( "invalid price: %s", ( price: any ) => {
+    const category = "lebensmittel";
+    const expected = NaN;
+
+    const res = vc.calc( price, category );
+    expect( res ).toBe( expected );
+  } );
+
 } );
