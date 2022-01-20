@@ -54,6 +54,7 @@ export class Queue {
     console.log( `Listening to rabbitmq Queue: ${queueName}` );
     channel.consume( queueName, ( msg: any ) => {
       const json = JSON.parse( msg.content.toString( "utf8" ) ); // missing error handling
+      console.log( `  ${queueName}: ${JSON.stringify( json )}` );
       const reply = this.controller( json );
       this.sendReply( msg, JSON.stringify( reply ) );
     } );

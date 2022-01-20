@@ -2,7 +2,7 @@
 
 ## Queues
 
-**vat-calculator**
+### caculateVat
 
 Calculate the VAT for the given price and product category.
 

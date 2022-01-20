@@ -2,7 +2,7 @@ import * as rabbitMq from "./entity/rabbit-mq";
 import * as controller from "./controller";
 
 const RABBIT_MQ_IP =  "127.0.0.1" ;
-const VAT_CALC_QUEUE = "vat-calculator";
+const VAT_CALC_QUEUE = "caculateVat";
 
 ( async () => {
   const rabbitMqConnection = new rabbitMq.Connection( RABBIT_MQ_IP );
