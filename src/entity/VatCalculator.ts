@@ -6,8 +6,8 @@ export class VatCalculator {
 
   // ref: https://de.wikipedia.org/wiki/Umsatzsteuergesetz_(Deutschland)#Umsatzsteuers%C3%A4tze
   static umsatzsteuersatz = {
-    regelsatz     : 0.19,
-    ermäßigterSatz: 0.07,
+    regelsatz     : 19,
+    ermäßigterSatz: 7,
   }
 
   private transformCategoryIntoPercentage( category: string ): number {
@@ -25,6 +25,6 @@ export class VatCalculator {
       throw new Error( "invalid product category" );
 
     const percentage = this.transformCategoryIntoPercentage( productCategory );
-    return parseFloat( ( price * percentage ).toFixed( 2 ) );
+    return parseFloat( ( 100 * price / ( 100 + percentage ) ).toFixed( 2 ) );
   }
 }

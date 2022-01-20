@@ -6,7 +6,7 @@ describe( "calc", () => {
   test( "success regelsteuersatz", () => {
     const price = 187;
     const category = "küchenzubehör";
-    const expected = 35.53;
+    const expected = 157.14;
 
     const res = vc.calc( price, category );
     expect( res ).toBe( expected );
@@ -15,7 +15,7 @@ describe( "calc", () => {
   test( "success ermäßigter satz", () => {
     const price = 187;
     const category = "zeitung";
-    const expected = 13.09;
+    const expected = 174.77;
 
     const res = vc.calc( price, category );
     expect( res ).toBe( expected );

@@ -6,7 +6,7 @@ test( "success", () => {
     category: "küchenzubehör",
   };
   const expected = {
-    vat  : 35.53,
+    vat  : 157.14,
     error: false,
   };
 

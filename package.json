@@ -11,7 +11,7 @@
     "node": ">=16"
   },
   "scripts": {
-    "start": "nodemon dist/app.js --ignore src/ --ignore test/ --trace-sync-io",
+    "start": "nodemon dist/src/app.js --ignore src/ --ignore test/ --trace-sync-io",
     "test": "jest --coverage",
     "build": "npm run build-ts",
     "build-ts": "tsc",
@@ -19,7 +19,7 @@
     "watch": "concurrently -k -n \"🔨,🚀\" \"npm run watch-build\" \"npm run watch-test\" --prefix name",
     "watch-build": "tsc -w",
     "watch-test": "jest --watch",
-    "start-prod": "concurrently -n \"vat-calculator\" \"node -r dotenv/config dist/app.js dotenv_config_path=.env\" --prefix name",
+    "start-prod": "concurrently -n \"vat-calculator\" \"node -r dotenv/config dist/src/app.js dotenv_config_path=.env\" --prefix name",
     "lint": "eslint --fix -c ~/.config/eslint/eslintrc-ts --ext .ts --parser-options \"{ 'ecmaVersion': 10, 'ecmaFeatures': { 'impliedStrict': true }, project: ./tsconfig.json }\" src"
   },
   "dependencies": {
