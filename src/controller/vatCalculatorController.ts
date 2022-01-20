@@ -9,7 +9,14 @@ export function vatCalculatorController( data: VatCalculatorInputDataType ): Vat
   if ( response != null )
     return response;
 
-  const vat = vatCalculatorInstance.calc( data.price, data.category );
+  try { // @ts-ignore
+    var vat = vatCalculatorInstance.calc( data.price, data.category );
+  } catch ( err: any ) {
+    return {
+      error   : true,
+      errorMsg: err.message,
+    };
+  }
 
   return {
     vat,
